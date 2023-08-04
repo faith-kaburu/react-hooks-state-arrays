@@ -6,6 +6,9 @@ function SpicyFoodList() {
 
   function handleAddFood() {
     const newFood = getNewRandomSpicyFood();
+    const newFoodArray = [...foods, newFood];
+    setFoods(newFoodArray);
+}
     console.log(newFood);
   }
 
@@ -15,12 +18,14 @@ function SpicyFoodList() {
     </li>
   ));
 
+
+
   return (
     <div>
       <button onClick={handleAddFood}>Add New Food</button>
       <ul>{foodList}</ul>
     </div>
   );
-}
+
 
 export default SpicyFoodList;
